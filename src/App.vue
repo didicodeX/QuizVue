@@ -7,7 +7,7 @@ import Question from './components/Question.vue';
 
 <template>
   <div class="quiz">
-    <div class="quiz__title">Questionnaire sur les Films et series</div>
+    <h1 class="quiz__title">Quiz sur les Films et series</h1>
     <ProgressBar/>
     <Question/>
     <Answers/>
@@ -20,9 +20,19 @@ import Question from './components/Question.vue';
 .quiz {
   display: flex;
   flex-direction: column;
-  border: 3px solid crimson;
+  box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.3);
   justify-content: center;
-  padding: 10px;
+  border-radius: 7px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  row-gap: 15px;
+}
+.quiz__title {
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 6px;
+  text-align: center;
 }
 
 </style>

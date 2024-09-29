@@ -1,8 +1,14 @@
 <template>
   <ul>
-    <li><input type="radio" name="answer" />A1</li>
-    <li><input type="radio" name="answer" />A2</li>
-    <li><input type="radio" name="answer" />A3</li>
+    <li>
+      <label><input type="radio" name="answer" />A1</label>
+    </li>
+    <li>
+      <label><input type="radio" name="answer" />A2</label>
+    </li>
+    <li>
+      <label><input type="radio" name="answer" />A3</label>
+    </li>
   </ul>
 </template>
 
