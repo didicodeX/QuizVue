@@ -1,17 +1,15 @@
 <template>
   <ul>
-    <li>
-      <label><input type="radio" name="answer" />A1</label>
-    </li>
-    <li>
-      <label><input type="radio" name="answer" />A2</label>
-    </li>
-    <li>
-      <label><input type="radio" name="answer" />A3</label>
+    <li v-for="choice in quiz.questions[0].choices" :key="choice">
+      <label><input type="radio" name="answer" />{{ choice }}</label>
     </li>
   </ul>
 </template>
-
+<script setup>
+defineProps({
+  quiz: Object,
+});
+</script>
 <style scoped>
 ul,
 li {

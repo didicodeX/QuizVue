@@ -5,6 +5,12 @@
   </div>
 </template>
 
+<script setup>
+defineProps({
+  quiz: Object,
+});
+</script>
+
 <style scoped>
 .quiz__progress {
   display: flex;
@@ -14,6 +20,4 @@
 progress {
   align-self: flex-end;
 }
-
-
 </style>

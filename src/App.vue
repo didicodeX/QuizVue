@@ -1,22 +1,38 @@
 <script setup>
-import Answers from './components/Answers.vue';
-import ProgressBar from './components/ProgressBar.vue';
-import Question from './components/Question.vue';
+import Answers from "./components/Answers.vue";
+import ProgressBar from "./components/ProgressBar.vue";
+import Question from "./components/Question.vue";
+import { onMounted, ref } from "vue";
+
+const quiz = ref(null);
+
+const color = ref()
+
+onMounted(() => {
+  fetch("/quiz.json")
+  .then((response) => response.json())
+  .then((data) => quiz.value = data)
+});
 
 </script>
 
 <template>
-  <div class="quiz">
-    <h1 class="quiz__title">Quiz sur les Films et series</h1>
-    <ProgressBar/>
-    <Question/>
-    <Answers/>
+  <div class="quiz" v-if="quiz">
+    <h2 class="quiz__title">{{ quiz.title }}</h2>
+    <ProgressBar :quiz/>
+    <Question :quiz/>
+    <Answers :quiz/>
+    <button>Question suivante</button>
   </div>
 
+  <select name="" id="" v-model="color">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+  </select>
 </template>
 
 <style scoped>
-
 .quiz {
   display: flex;
   flex-direction: column;
@@ -25,8 +41,9 @@ import Question from './components/Question.vue';
   border-radius: 7px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 500px;
+  max-width: 600px;
   row-gap: 15px;
+  color: v-bind(color);
 }
 .quiz__title {
   text-decoration: underline;
@@ -34,5 +51,7 @@ import Question from './components/Question.vue';
   text-underline-offset: 6px;
   text-align: center;
 }
-
+button {
+  align-self: end;
+}
 </style>

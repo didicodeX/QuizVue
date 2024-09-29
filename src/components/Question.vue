@@ -1,3 +1,11 @@
 <template>
-  <p>Quelle est le nom de mom</p>
+  <p>{{ quiz.questions[0].question }}</p>
 </template>
+
+<script setup>
+const props = defineProps({
+  quiz: Object,
+});
+
+
+</script>
