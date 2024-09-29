@@ -32,7 +32,7 @@ onMounted(() => {
   </select>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .quiz {
   display: flex;
   flex-direction: column;
